@@ -8,19 +8,25 @@
 let nome = prompt("Qual o seu nome?");
 let idade = prompt("Quantos anos voce tem?");
 let linguagem = prompt("Qual linguagem de programação você está estudando?");
+let msg = `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}`;
 
 if (nome || idade || linguagem != null) {
-    document.getElementById("resultado").innerHTML =
-    `Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}`;
+    document.getElementById("resultado").innerHTML = msg;
 }
 
-let escolha = prompt(`Você gosta de estudar ${linguagem}? <br> Digite 1 para SIM ou 2 para NÃO`);
+let escolha = prompt(`Você gosta de estudar ${linguagem}? Digite 1 para SIM ou 2 para NÃO`)
 
-if (escolha == 1) {
-    document.getElementById("escolha").innerHTML =
-    "Muito bom! Contiue estudandoe você terá muito sucesso."
-} else {
-    document.getElementById("escolha").innerHTML =
-    "Ahh que pena... Já tentou aprender outras linguagens?"
+switch (escolha) {
+    case '1' : 
+        document.getElementById("escolha").innerHTML =
+        "Muito bom! Contiue estudandoe você terá muito sucesso."
+        break;
+    case '2' : 
+        document.getElementById("escolha").innerHTML = 
+        "Ah que pensa... Já tentou aprender outras linguagens?"
+
+    default:
+        break;
 }
+
 
